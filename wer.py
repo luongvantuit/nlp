@@ -106,7 +106,6 @@ def wers(refs, hyps):
         numCor += result["numCor"]
         numIns += result["numIns"]
         numCount += result["numCount"]
-    print(numCount)
     return round( (numSub + numDel + numIns) / (float) (numCount), 3)
 
 
