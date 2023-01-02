@@ -1,4 +1,4 @@
-def wer_debug(ref: str, hyp: str,debug=True):
+def wer(ref: str, hyp: str,debug=True):
     r = ref.split()
     h = hyp.split()
     #costs will holds the costs, like in the Levenshtein distance algorithm
@@ -100,7 +100,7 @@ def wers(refs, hyps):
     numIns = 0
     numCount = 0
     for ref, hyp in zip(refs, hyps):
-        result = wer_debug(ref, hyp, False)
+        result = wer(ref, hyp, False)
         numSub += result["numSub"]
         numDel += result["numDel"]
         numCor += result["numCor"]
@@ -109,5 +109,4 @@ def wers(refs, hyps):
     return round( (numSub + numDel + numIns) / (float) (numCount), 3)
 
 
-if __name__ == "__main__": 
-    print(wers(["what a bright day"], ["what a light day"]))
+

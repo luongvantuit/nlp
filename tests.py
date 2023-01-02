@@ -1,20 +1,10 @@
-import whisper
-import os
-from wer import wers, wer_debug
+from test.tests_vn import tests_vn
 
-path: str = os.path.join(os.getcwd(), "of1_01.mp3")
+print('--- Test VN ---')
 
+tests_vn()
 
-model = whisper.load_model("small")
+print('--- Test EN ---')
 
-
-result = model.transcribe(path)
-
-f = open(os.path.join(os.getcwd(), "of1_ts01.txt"), "r")
-
-
-print(
-    wer_debug(f.read(),result["text"])
-)
 
 
